@@ -1,5 +1,7 @@
 import { storageMock } from './jestGlobalMocks';
 
+const TEST_VALUE = 2;
+
 describe('JestMocks', () => {
   it('localStorage must be empty', () => {
     const localStorage = storageMock();
@@ -12,14 +14,14 @@ describe('JestMocks', () => {
     localStorage.setItem('key-empty');
     localStorage.setItem('key-number', 1);
     localStorage.setItem('key-string', 'value');
-    localStorage.setItem('key-array', [ 2 ]);
+    localStorage.setItem('key-array', [ TEST_VALUE ]);
     localStorage.setItem('key-object', { a: 'b' });
 
     expect(localStorage.getItem('key-not-found')).toEqual(null);
     expect(localStorage.getItem('key-empty')).toEqual('');
     expect(localStorage.getItem('key-number')).toEqual(1);
     expect(localStorage.getItem('key-string')).toEqual('value');
-    expect(localStorage.getItem('key-array')).toEqual([ 2 ]);
+    expect(localStorage.getItem('key-array')).toEqual([ TEST_VALUE ]);
     expect(localStorage.getItem('key-object')).toEqual({ a: 'b' });
   });
 

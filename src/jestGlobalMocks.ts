@@ -1,5 +1,6 @@
 export interface StorageMockInterface {
   length: number;
+  // tslint:disable-next-line:no-any
   setItem(key: string, value?: any): void;
   getItem(key: string): void;
   removeItem(key: string): void;
@@ -10,6 +11,7 @@ export function storageMock(): StorageMockInterface {
   const storage = {};
 
   return {
+    // tslint:disable-next-line:no-any
     setItem: (key: string, value?: any) => {
       storage[key] = value || '';
     },
