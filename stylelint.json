@@ -16,7 +16,7 @@
       }
     ],
     "at-rule-no-vendor-prefix": true,
-    "at-rule-whitelist": [
+    "at-rule-allowed-list": [
       "mixin",
       "if",
       "function",

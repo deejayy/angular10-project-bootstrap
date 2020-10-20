@@ -1,10 +1,10 @@
+// tslint:disable:no-any
 export interface StorageMockInterface {
   length: number;
-  // tslint:disable-next-line:no-any
-  setItem(key: string, value?: any): void;
-  getItem(key: string): void;
-  removeItem(key: string): void;
-  key(index: number): void;
+  setItem(key: string, value?: any): any;
+  getItem(key: string): any;
+  removeItem(key: string): any;
+  key(index: number): any;
 }
 
 export function storageMock(): StorageMockInterface {
