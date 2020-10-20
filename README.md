@@ -1,2 +1,2 @@
-# Si-CRM v2
+# Angular 10 project bootstrap
 

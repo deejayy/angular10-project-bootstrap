@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "si-crm-v2": {
+    "projex": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/si-crm-v2",
+            "outputPath": "dist/projex",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,18 +79,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "si-crm-v2:build"
+            "browserTarget": "projex:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "si-crm-v2:build:production"
+              "browserTarget": "projex:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "si-crm-v2:build"
+            "browserTarget": "projex:build"
           }
         },
         "test": {
@@ -114,5 +114,5 @@
         }
       }
     }},
-  "defaultProject": "si-crm-v2"
+  "defaultProject": "projex"
 }
