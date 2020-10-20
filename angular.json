@@ -29,17 +29,17 @@
             ],
             "styles": [
               {
-                "input": "src/material-theme.scss",
+                "input": "src/styles/material-theme.scss",
                 "bundleName": "material"
               },
               {
-                "input": "src/styles.scss",
+                "input": "src/styles/styles.scss",
                 "bundleName": "styles"
               }
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src"
+                "src/styles"
               ]
             },
             "scripts": []
@@ -57,14 +57,15 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "200kb",
+                  "maximumError": "500kb"
                 },
                 {
                   "type": "anyComponentStyle",

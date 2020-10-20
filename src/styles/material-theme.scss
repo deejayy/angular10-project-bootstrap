@@ -1,4 +1,6 @@
+@import "../../node_modules/modern-css-reset/dist/reset.css";
 @import "app-theme.scss";
+@import "fonts.scss";
 @import "~@angular/material/theming";
 
 @include mat-core();
