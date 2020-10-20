@@ -28,8 +28,14 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/modern-css-reset/dist/reset.css",
-              "src/styles.scss"
+              {
+                "input": "src/material-theme.scss",
+                "bundleName": "material"
+              },
+              {
+                "input": "src/styles.scss",
+                "bundleName": "styles"
+              }
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
