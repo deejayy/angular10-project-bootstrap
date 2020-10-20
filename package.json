@@ -1,13 +1,16 @@
 {
   "name": "si-crm-v2",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lint": "ng lint && npm run lint:styles",
+    "lint:styles": "stylelint --syntax=scss --config=./stylelint **/*.scss",
+    "lint-staged": "lint-staged -r",
+    "precommit": "npm run lint-staged"
   },
   "private": true,
   "jest": {
@@ -25,6 +28,18 @@
     "moduleNameMapper": {
       "@app/(.*)": "<rootDir>/src/app/$1",
       "@env/(.*)": "<rootDir>/src/environments/$1"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint",
+      "jest --findRelatedTests"
+    ],
+    "*.scss": "stylelint --syntax=scss --config=./stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
@@ -50,6 +65,7 @@
     "@types/jest": "^26.0.15",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "husky": "^4.3.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "jest": "^26.6.0",
@@ -60,9 +76,15 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^10.4.2",
     "protractor": "~7.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-scss": "^3.18.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
+    "tslint": "^6.1.3",
+    "tslint-clean-code": "^0.2.10",
+    "tslint-microsoft-contrib": "^6.2.0",
     "typescript": "~4.0.2"
   }
 }
