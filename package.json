@@ -10,6 +10,23 @@
     "e2e": "ng e2e"
   },
   "private": true,
+  "jest": {
+    "preset": "jest-preset-angular",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$",
+        "diagnostics": false
+      }
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupJest.ts"
+    ],
+    "moduleNameMapper": {
+      "@app/(.*)": "<rootDir>/src/app/$1",
+      "@env/(.*)": "<rootDir>/src/environments/$1"
+    }
+  },
   "dependencies": {
     "@angular/animations": "~10.1.6",
     "@angular/common": "~10.1.6",
@@ -24,15 +41,20 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@angular-builders/jest": "^10.0.1",
     "@angular-devkit/build-angular": "~0.1001.7",
     "@angular/cli": "~10.1.7",
     "@angular/compiler-cli": "~10.1.6",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
+    "jest": "^26.6.0",
+    "jest-html-reporter": "^3.3.0",
+    "jest-preset-angular": "^8.3.1",
     "karma": "~5.0.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~3.0.2",
