@@ -6,7 +6,6 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "e2e": "ng e2e",
     "lint": "ng lint && npm run lint:styles",
     "lint:styles": "stylelint --syntax=scss --config=./stylelint **/*.scss",
     "lint-staged": "lint-staged -r",

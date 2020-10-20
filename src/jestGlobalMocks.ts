@@ -13,9 +13,8 @@ export function storageMock(): StorageMockInterface {
     setItem: (key: string, value?: any) => {
       storage[key] = value || '';
     },
-    getItem: (key: string) => {
-      return key in storage ? storage[key] : null;
-    },
+    getItem: (key: string) =>
+      key in storage ? storage[key] : null,
     removeItem: (key: string) => {
       delete storage[key];
     },
