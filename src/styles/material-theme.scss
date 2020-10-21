@@ -87,7 +87,7 @@ $custom-typography: mat-typography-config(
 @include angular-material-theme($app-theme);
 
 body {
-  color: $theme-color;
+  color: $font-color;
   font-size: 16px;
   font-family: $theme-font;
 }
