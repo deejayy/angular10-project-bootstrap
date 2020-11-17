@@ -149,7 +149,7 @@
     "no-namespace": false,
     "no-null-keyword": false,
     "no-octal-literal": true,
-    "no-parameter-properties": true,
+    "no-parameter-properties": false,
     "no-reference": true,
     "no-reference-import": true,
     "no-regex-spaces": true,

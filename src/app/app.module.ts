@@ -1,10 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ApiCallerModule } from '@deejayy/api-caller';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { BemModule } from 'angular-bem';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BemModule } from 'angular-bem';
+import { CoreModule } from './core/core.module';
 
 BemModule.config({
   separators: ['-', '_', ''],
@@ -13,14 +18,16 @@ BemModule.config({
 });
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     BemModule,
+    CoreModule,
     AppRoutingModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot(),
+    ApiCallerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
