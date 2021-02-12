@@ -2,7 +2,7 @@ module.exports = {
   preset: "jest-preset-angular",
   globals: {
     "ts-jest": {
-      tsConfig: "<rootDir>/tsconfig.spec.json",
+      tsconfig: "<rootDir>/tsconfig.spec.json",
       stringifyContentPathRegex: "\\.html$",
       diagnostics: false,
     },
@@ -10,6 +10,9 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/src/setupJest.ts"],
   moduleNameMapper: {
     "@app/(.*)": "<rootDir>/src/app/$1",
+    "@core/(.*)": "<rootDir>/src/app/core/$1",
+    "@feature/(.*)": "<rootDir>/src/app/feature/$1",
+    "@shared/(.*)": "<rootDir>/src/app/shared/$1",
     "@env/(.*)": "<rootDir>/src/environments/$1",
   },
 };
