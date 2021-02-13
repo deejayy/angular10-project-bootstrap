@@ -6,7 +6,7 @@ const LOCALE_FILE_PATH = '/assets/i18n/messages.en-US.json';
 
 @Injectable()
 export class LocalizerService {
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) { }
 
   public async loadMessages(locale: string = LOCALE_FILE_PATH): Promise<void> {
     return this.http
@@ -15,6 +15,8 @@ export class LocalizerService {
       .then((data: { [key: string]: string }) => {
         loadTranslations(data);
       })
-      .catch((reason) => { console.error(reason); });
+      .catch((reason) => {
+        console.error(reason);
+      });
   }
 }

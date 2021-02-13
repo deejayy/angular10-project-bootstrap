@@ -1,4 +1,4 @@
-// tslint:disable:no-any
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface StorageMockInterface {
   length: number;
   setItem(key: string, value?: any): any;
@@ -11,12 +11,13 @@ export function storageMock(): StorageMockInterface {
   const storage = {};
 
   return {
-    // tslint:disable-next-line:no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setItem: (key: string, value?: any) => {
       storage[key] = value || '';
     },
-    getItem: (key: string) =>
-      key in storage ? storage[key] : null,
+    getItem: (key: string) => {
+      return key in storage ? storage[key] : null;
+    },
     removeItem: (key: string) => {
       delete storage[key];
     },
@@ -32,5 +33,5 @@ export function storageMock(): StorageMockInterface {
 
 Object.defineProperty(window, 'localStorage', { value: storageMock });
 Object.defineProperty(window, 'sessionStorage', { value: storageMock });
-Object.defineProperty(window, 'gtag', { value: () => {} });
-Object.defineProperty(window, 'ga', { value: () => {} });
+Object.defineProperty(window, 'gtag', { value: () => { } });
+Object.defineProperty(window, 'ga', { value: () => { } });

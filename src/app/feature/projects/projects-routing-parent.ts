@@ -5,7 +5,10 @@ export const PROJECTS_ROUTES: Routes = [
   {
     path: 'projects',
     component: ProjectsComponent,
-    loadChildren: () =>
-      import('./projects.module').then((m) => m.ProjectsModule),
+    loadChildren: () => {
+      return import('./projects.module').then((m) => {
+        return m.ProjectsModule;
+      });
+    },
   },
 ];

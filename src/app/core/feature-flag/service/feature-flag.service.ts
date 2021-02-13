@@ -3,9 +3,9 @@ import { ConfigurationService } from '@app/core/config/service/config.service';
 
 @Injectable()
 export class FeatureFlagService {
-  constructor(private configService: ConfigurationService) {}
+  public constructor(private configService: ConfigurationService) { }
 
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public getFeatureSetting(feature: string): any {
     const features = this.configService.get('features');
     if (features && features[feature]) {

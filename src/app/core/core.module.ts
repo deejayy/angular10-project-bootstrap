@@ -25,13 +25,15 @@ import { ApiConnectorService } from './service/api-connector.service';
       provide: APP_INITIALIZER,
       multi: true,
       deps: [ConfigurationService],
-      useFactory: (configurationService: ConfigurationService) => async () => {
-        const configFile = environment.configuration;
-        try {
-          return configurationService.loadAppConfig(`/assets/${configFile}`);
-        } catch (err) {
-          console.error('Configuration load failed, error:', err);
-        }
+      useFactory: (configurationService: ConfigurationService) => {
+        return async () => {
+          const configFile = environment.configuration;
+          try {
+            return configurationService.loadAppConfig(`/assets/${configFile}`);
+          } catch (err) {
+            console.error('Configuration load failed, error:', err);
+          }
+        };
       },
     },
     {
@@ -41,15 +43,17 @@ import { ApiConnectorService } from './service/api-connector.service';
       useFactory: (
         localizerService: LocalizerService,
         locale: string,
-      ) => async () => {
-        const localeFile = `/assets/i18n/messages.${locale}.json`;
-        try {
-          return localizerService.loadMessages(localeFile);
-        } catch (err) {
-          console.error('Localization load failed, error:', err);
-        }
+      ) => {
+        return async () => {
+          const localeFile = `/assets/i18n/messages.${locale}.json`;
+          try {
+            return localizerService.loadMessages(localeFile);
+          } catch (err) {
+            console.error('Localization load failed, error:', err);
+          }
+        };
       },
     },
   ],
 })
-export class CoreModule {}
+export class CoreModule { }

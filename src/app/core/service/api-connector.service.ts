@@ -8,9 +8,9 @@ export class ApiConnectorService extends ApiConnector {
   public defaultApiUrl = 'http://localhost';
   public errorHandler = (payload: string | object) => {
     console.error('handling... ', payload);
-  }
+  };
 
-  constructor() {
+  public constructor() {
     super();
     this.tokenData$ = of('token!');
   }

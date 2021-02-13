@@ -15,12 +15,12 @@ class MockConfigService {
         'feature-5': { subFeature: true },
       };
     }
-  }
+  };
 }
 
 describe('FeatureFlagService', () => {
   let service: FeatureFlagService;
-  // tslint:disable-next-line: no-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let result: any;
 
   beforeEach(() => {
@@ -40,17 +40,17 @@ describe('FeatureFlagService', () => {
   });
 
   const testCases = [
-    [ 'feature-0', undefined ],
-    [ 'feature-1', true ],
-    [ 'feature-2', undefined ],
-    [ 'feature-3', undefined ],
-    [ 'feature-4', [1, TEST_VALUE] ],
-    [ 'feature-5', { subFeature: true } ],
+    ['feature-0', undefined],
+    ['feature-1', true],
+    ['feature-2', undefined],
+    ['feature-3', undefined],
+    ['feature-4', [1, TEST_VALUE]],
+    ['feature-5', { subFeature: true }],
   ];
 
   test.each(testCases)(
     'getFeatureSetting %#: %p',
-    // tslint:disable-next-line: no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (input: string, expected: any) => {
       result = service.getFeatureSetting(input);
       expect(result).toEqual(expected);
