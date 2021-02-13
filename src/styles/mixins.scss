@@ -1,4 +1,6 @@
 $breakpoints: (
+  "phone-micro": 320px,
+  "phone-small": 360px,
   "phone": 400px,
   "phone-wide": 480px,
   "phablet": 560px,
@@ -6,6 +8,7 @@ $breakpoints: (
   "tablet": 768px,
   "tablet-wide": 1024px,
   "desktop": 1248px,
+  "desktop-small": 1368px,
   "desktop-wide": 1440px,
 );
 
@@ -26,6 +29,6 @@ $breakpoints: (
 @function smart-scale($minwidth, $maxwwidth, $minscreen: 320, $maxscreen: 1440) {
   @return calc(
     #{$minwidth + "px"} + (#{$maxwwidth} - #{$minwidth}) * ((100vw - #{$minscreen + "px"}) /
-          (#{$maxscreen} - #{$minscreen}))
+    (#{$maxscreen} - #{$minscreen}))
   );
 }
