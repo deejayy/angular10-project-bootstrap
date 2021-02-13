@@ -6,7 +6,7 @@ import { FeatureFlagService } from '../service/feature-flag.service';
 
 @Injectable()
 export class FeatureRouteGuard implements CanActivate {
-  public constructor(private router: Router, private featureFlagService: FeatureFlagService) {}
+  constructor(private router: Router, private featureFlagService: FeatureFlagService) {}
 
   public canActivate(
     next: ActivatedRouteSnapshot,

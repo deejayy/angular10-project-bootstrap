@@ -45,7 +45,10 @@
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
           {
-            "accessibility": "explicit"
+            "accessibility": "explicit",
+            "overrides": {
+              "constructors": "off"
+            }
           }
         ],
         "@typescript-eslint/member-ordering": "off",

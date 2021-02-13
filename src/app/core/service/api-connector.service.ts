@@ -10,7 +10,7 @@ export class ApiConnectorService extends ApiConnector {
     console.error('handling... ', payload);
   };
 
-  public constructor() {
+  constructor() {
     super();
     this.tokenData$ = of('token!');
   }
