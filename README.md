@@ -12,6 +12,7 @@ It has
 - api calling setup for @deejayy/api-caller
 - a simple feature flag module
 - jest and some tests
+- eslint
 
 # How to use the features already set up
 
