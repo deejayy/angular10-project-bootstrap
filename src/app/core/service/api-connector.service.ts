@@ -6,7 +6,7 @@ import { ApiConnector } from '@deejayy/api-caller';
 export class ApiConnectorService extends ApiConnector {
   public tokenData$: Observable<string>;
   public defaultApiUrl = 'http://localhost';
-  public errorHandler = (payload: string | object) => {
+  public errorHandler = (payload: string | unknown) => {
     console.error('handling... ', payload);
   };
 

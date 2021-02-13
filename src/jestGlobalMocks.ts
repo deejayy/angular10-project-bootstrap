@@ -7,31 +7,33 @@ export interface StorageMockInterface {
   key(index: number): any;
 }
 
-export function storageMock(): StorageMockInterface {
-  const storage = {};
+export class StorageMock implements StorageMockInterface {
+  private storage = {};
 
-  return {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    setItem: (key: string, value?: any) => {
-      storage[key] = value || '';
-    },
-    getItem: (key: string) => {
-      return key in storage ? storage[key] : null;
-    },
-    removeItem: (key: string) => {
-      delete storage[key];
-    },
-    get length(): number {
-      return Object.keys(storage).length;
-    },
-    key: (index: number) => {
-      const keys = Object.keys(storage);
-      return keys[index] || null;
-    },
-  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  public setItem(key: string, value?: any) {
+    this.storage[key] = value || '';
+  }
+
+  public getItem(key: string) {
+    return key in this.storage ? this.storage[key] : null;
+  }
+
+  public removeItem(key: string) {
+    delete this.storage[key];
+  }
+
+  public get length(): number {
+    return Object.keys(this.storage).length;
+  }
+
+  public key(index: number) {
+    const keys = Object.keys(this.storage);
+    return keys[index] || null;
+  }
 }
 
-Object.defineProperty(window, 'localStorage', { value: storageMock });
-Object.defineProperty(window, 'sessionStorage', { value: storageMock });
+Object.defineProperty(window, 'localStorage', { value: new StorageMock() });
+Object.defineProperty(window, 'sessionStorage', { value: new StorageMock() });
 Object.defineProperty(window, 'gtag', { value: () => {} });
 Object.defineProperty(window, 'ga', { value: () => {} });

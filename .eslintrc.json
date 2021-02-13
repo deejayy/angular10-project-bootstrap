@@ -1,17 +1,11 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
+  "ignorePatterns": ["projects/**/*"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "tsconfig.json"
-        ],
+        "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
@@ -19,9 +13,7 @@
         "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
-      "plugins": [
-        "eslint-plugin-no-null"
-      ],
+      "plugins": ["eslint-plugin-no-null"],
       "rules": {
         "@angular-eslint/component-selector": [
           "error",
@@ -74,18 +66,9 @@
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/type-annotation-spacing": "off",
         "@typescript-eslint/unbound-method": "off",
-        "arrow-body-style": [
-          "error",
-          "always"
-        ],
-        "arrow-parens": [
-          "error",
-          "always"
-        ],
-        "brace-style": [
-          "error",
-          "1tbs"
-        ],
+        "arrow-body-style": ["error", "always"],
+        "arrow-parens": ["error", "always"],
+        "brace-style": ["error", "1tbs"],
         "class-methods-use-this": "off",
         "comma-dangle": [
           "error",
@@ -109,10 +92,7 @@
         "import/order": "off",
         "jsdoc/check-alignment": "off",
         "jsdoc/newline-after-description": "off",
-        "linebreak-style": [
-          "error",
-          "unix"
-        ],
+        "linebreak-style": ["error", "unix"],
         "max-lines": "off",
         "no-constant-condition": "error",
         "no-control-regex": "error",
@@ -120,7 +100,7 @@
         "no-extra-semi": "error",
         "no-invalid-regexp": "error",
         "no-invalid-this": "error",
-        "no-magic-numbers": "error",
+        "no-magic-numbers": ["error", { "ignore": [0, 1] }],
         "no-multi-str": "off",
         "no-multiple-empty-lines": "error",
         "no-null/no-null": "off",
@@ -128,10 +108,7 @@
         "no-octal-escape": "error",
         "no-redeclare": "error",
         "no-regex-spaces": "error",
-        "no-restricted-syntax": [
-          "error",
-          "ForInStatement"
-        ],
+        "no-restricted-syntax": ["error", "ForInStatement"],
         "no-sparse-arrays": "error",
         "no-template-curly-in-string": "error",
         "no-void": "off",
@@ -142,12 +119,8 @@
       }
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
   ]
