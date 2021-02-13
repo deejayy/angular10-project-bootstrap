@@ -6,8 +6,6 @@ import { environment } from './environments/environment';
 
 import '@angular/localize/init';
 
-import 'hammerjs';
-
 if (environment.production) {
   enableProdMode();
 }
