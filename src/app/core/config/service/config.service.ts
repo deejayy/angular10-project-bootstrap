@@ -8,7 +8,7 @@ const CONFIG_PATH = '/assets/config.json';
 export class ConfigurationService {
   private appConfig: AppConfig;
 
-  public constructor(private http: HttpClient) { }
+  public constructor(private http: HttpClient) {}
 
   public async loadAppConfig(configPath: string = CONFIG_PATH): Promise<void> {
     return this.http

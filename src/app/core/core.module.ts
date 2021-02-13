@@ -12,13 +12,7 @@ import { ApiConnectorService } from './service/api-connector.service';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ConfigModule,
-    FeatureFlagModule,
-    LocalizerModule,
-  ],
+  imports: [CommonModule, HttpClientModule, ConfigModule, FeatureFlagModule, LocalizerModule],
   providers: [
     { provide: ApiConnector, useClass: ApiConnectorService },
     {
@@ -40,10 +34,7 @@ import { ApiConnectorService } from './service/api-connector.service';
       provide: APP_INITIALIZER,
       multi: true,
       deps: [LocalizerService, LOCALE_ID],
-      useFactory: (
-        localizerService: LocalizerService,
-        locale: string,
-      ) => {
+      useFactory: (localizerService: LocalizerService, locale: string) => {
         return async () => {
           const localeFile = `/assets/i18n/messages.${locale}.json`;
           try {
@@ -56,4 +47,4 @@ import { ApiConnectorService } from './service/api-connector.service';
     },
   ],
 })
-export class CoreModule { }
+export class CoreModule {}

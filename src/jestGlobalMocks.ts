@@ -33,5 +33,5 @@ export function storageMock(): StorageMockInterface {
 
 Object.defineProperty(window, 'localStorage', { value: storageMock });
 Object.defineProperty(window, 'sessionStorage', { value: storageMock });
-Object.defineProperty(window, 'gtag', { value: () => { } });
-Object.defineProperty(window, 'ga', { value: () => { } });
+Object.defineProperty(window, 'gtag', { value: () => {} });
+Object.defineProperty(window, 'ga', { value: () => {} });

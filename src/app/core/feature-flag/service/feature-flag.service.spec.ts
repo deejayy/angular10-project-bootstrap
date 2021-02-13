@@ -25,10 +25,7 @@ describe('FeatureFlagService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        FeatureFlagService,
-        { provide: ConfigurationService, useClass: MockConfigService },
-      ],
+      providers: [FeatureFlagService, { provide: ConfigurationService, useClass: MockConfigService }],
     });
 
     service = TestBed.inject(FeatureFlagService);

@@ -3,7 +3,7 @@ import { ConfigurationService } from '@app/core/config/service/config.service';
 
 @Injectable()
 export class FeatureFlagService {
-  public constructor(private configService: ConfigurationService) { }
+  public constructor(private configService: ConfigurationService) {}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public getFeatureSetting(feature: string): any {

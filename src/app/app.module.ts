@@ -32,4 +32,4 @@ BemModule.config({
   providers: [{ provide: LOCALE_ID, useValue: 'hu' }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
