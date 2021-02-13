@@ -49,6 +49,7 @@ describe('FeatureFlagService', () => {
     'getFeatureSetting %#: %p',
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (input: string, expected: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       result = service.getFeatureSetting(input);
       expect(result).toEqual(expected);
     },

@@ -12,10 +12,12 @@ export class StorageMock implements StorageMockInterface {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public setItem(key: string, value?: any) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     this.storage[key] = value || '';
   }
 
   public getItem(key: string) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return key in this.storage ? this.storage[key] : null;
   }
 
@@ -35,5 +37,5 @@ export class StorageMock implements StorageMockInterface {
 
 Object.defineProperty(window, 'localStorage', { value: new StorageMock() });
 Object.defineProperty(window, 'sessionStorage', { value: new StorageMock() });
-Object.defineProperty(window, 'gtag', { value: () => {} });
-Object.defineProperty(window, 'ga', { value: () => {} });
+Object.defineProperty(window, 'gtag', { value: null });
+Object.defineProperty(window, 'ga', { value: null });

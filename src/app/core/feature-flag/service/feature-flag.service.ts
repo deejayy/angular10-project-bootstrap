@@ -9,6 +9,7 @@ export class FeatureFlagService {
   public getFeatureSetting(feature: string): any {
     const features = this.configService.get('features');
     if (features && features[feature]) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return features[feature];
     }
     return undefined;

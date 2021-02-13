@@ -27,7 +27,7 @@ export class ConfigurationService {
       throw Error('Config file not loaded!');
     }
 
-    return this.appConfig[key];
+    return this.appConfig[key] as string;
   }
 
   public set(key: string, value: string): void {
