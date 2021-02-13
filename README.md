@@ -4,6 +4,7 @@ It has
 - material design resources (fonts, styles, palette) and setup
 - modern-css-reset
 - tuned viewport
+- placeholder for disabled js and slow loading time
 - responsive breakpoints defined in mixins
 - ngrx state management
 - runtime configuration loading depending on the environment for it's compiled
