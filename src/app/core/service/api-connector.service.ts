@@ -1,17 +1,22 @@
-import { Observable, of } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { ApplicationInitStatus, Injectable } from '@angular/core';
 import { ApiConnector } from '@deejayy/api-caller';
+import { Observable, of } from 'rxjs';
+
+import { ConfigurationService } from '../config/service/config.service';
 
 @Injectable()
 export class ApiConnectorService extends ApiConnector {
   public tokenData$: Observable<string>;
-  public defaultApiUrl = 'http://localhost';
+  public defaultApiUrl: string = 'http://localhost/';
   public errorHandler = (payload: string | unknown) => {
     console.error('handling... ', payload);
   };
 
-  constructor() {
+  constructor(private config: ConfigurationService, private initStatus: ApplicationInitStatus) {
     super();
-    this.tokenData$ = of('token!');
+    this.initStatus.donePromise.then(() => {
+      this.defaultApiUrl = this.config.get('apiEndpoint');
+      this.tokenData$ = of('token!');
+    });
   }
 }
