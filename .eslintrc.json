@@ -131,7 +131,7 @@
         "no-duplicate-case": "error",
         "no-extra-semi": "error",
         "no-invalid-regexp": "error",
-        "no-invalid-this": "error",
+        "no-invalid-this": "off",
         "no-magic-numbers": ["error", { "ignore": [0, 1] }],
         "no-multi-assign": "error",
         "no-multi-str": "off",
