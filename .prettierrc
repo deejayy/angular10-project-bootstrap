@@ -10,5 +10,6 @@
   "jsxBracketSameLine": false,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "embeddedLanguageFormatting": "auto"
+  "embeddedLanguageFormatting": "auto",
+  "singleQuote": true
 }

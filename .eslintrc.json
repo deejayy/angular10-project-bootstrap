@@ -120,6 +120,13 @@
         "jsdoc/check-alignment": "off",
         "jsdoc/newline-after-description": "off",
         "linebreak-style": ["error", "unix"],
+        "max-len": [
+          "error",
+          {
+            "code": 140,
+            "ignorePattern": "^import .*"
+          }
+        ],
         "max-lines-per-function": [
           "error",
           {

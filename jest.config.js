@@ -8,6 +8,7 @@ module.exports = {
     },
   },
   setupFilesAfterEnv: ["<rootDir>/src/setupJest.ts"],
+  moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
     "@app/(.*)": "<rootDir>/src/app/$1",
     "@core/(.*)": "<rootDir>/src/app/core/$1",
