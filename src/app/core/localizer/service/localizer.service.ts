@@ -1,16 +1,20 @@
-import { loadTranslations } from '@angular/localize';
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { loadTranslations } from '@angular/localize';
 
-const LOCALE_FILE_PATH = '/assets/i18n/messages.en-US.json';
+import { LanguageList } from '../model/language-definitions';
 
 @Injectable()
 export class LocalizerService {
+  public selectedLanguage: string = LanguageList.ENGLISH_US;
+
   constructor(private http: HttpClient) {}
 
-  public async loadMessages(locale: string = LOCALE_FILE_PATH): Promise<void> {
+  public async loadMessages(locale: string = LanguageList.ENGLISH_US): Promise<void> {
+    this.selectedLanguage = locale;
+
     return this.http
-      .get(locale)
+      .get(`/assets/i18n/messages.${locale}.json`)
       .toPromise()
       .then((data: { [key: string]: string }) => {
         loadTranslations(data);
