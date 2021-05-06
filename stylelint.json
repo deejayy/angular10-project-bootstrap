@@ -1,21 +1,32 @@
 {
-  "extends": "stylelint-config-standard-scss",
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-scss"],
   "rules": {
     "at-rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "blockless-after-same-name-blockless",
-          "blockless-after-blockless",
-          "first-nested"
-        ],
-        "ignoreAtRules": [
-          "import",
-          "include"
-        ]
+        "except": ["blockless-after-same-name-blockless", "blockless-after-blockless", "first-nested"],
+        "ignoreAtRules": ["import", "include"]
       }
     ],
     "at-rule-no-vendor-prefix": true,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "mixin",
+          "if",
+          "function",
+          "return",
+          "import",
+          "include",
+          "media",
+          "keyframes",
+          "supports",
+          "font-face"
+        ]
+      }
+    ],
     "at-rule-allowed-list": [
       "mixin",
       "if",
@@ -31,9 +42,7 @@
     "block-no-empty": [
       true,
       {
-        "ignore": [
-          "comments"
-        ]
+        "ignore": ["comments"]
       }
     ],
     "color-no-invalid-hex": true,
@@ -56,28 +65,19 @@
     "property-no-unknown": [
       true,
       {
-        "ignoreProperties": [
-          "scroll",
-          "overflow-x",
-          "overflow-y"
-        ]
+        "ignoreProperties": ["scroll", "overflow-x", "overflow-y"]
       }
     ],
     "property-no-vendor-prefix": [
       true,
       {
-        "ignoreProperties": [
-          "appearance"
-        ]
+        "ignoreProperties": ["appearance"]
       }
     ],
     "rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "after-single-line-comment",
-          "first-nested"
-        ]
+        "except": ["after-single-line-comment", "first-nested"]
       }
     ],
     "selector-pseudo-class-no-unknown": true,
